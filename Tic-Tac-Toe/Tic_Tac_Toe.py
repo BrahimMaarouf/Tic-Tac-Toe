@@ -38,19 +38,22 @@ def inputValidation(n):
     return n
 
 def gameLogic(p1, p2):
-
+    
     for condition in win_cond:
-
         if all(pos in player1_choices for pos in condition):
             print(f"{p1.name} Wins!")
             exit(0)
 
-    for condition in win_cond:
-        if all(pos in player2_choices for pos in condition):
+        elif all(pos in player2_choices for pos in condition):
             print(f"{p2.name} Wins!")
             exit(0)
-    print("Its a Draw !!!")
-    exit(0)
+  
+    if len(player1_choices) + len(player2_choices) == 9:  
+        print("It's a Draw !!!")
+        input("Press Enter to quit")
+        exit(0)
+
+
 
 def tic_tac_toe():
     tic_ui(demo)
