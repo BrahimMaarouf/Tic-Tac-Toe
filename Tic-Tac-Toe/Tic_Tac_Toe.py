@@ -49,6 +49,8 @@ def gameLogic(p1, p2):
         if all(pos in player2_choices for pos in condition):
             print(f"{p2.name} Wins!")
             exit(0)
+    print("Its a Draw !!!")
+    exit(0)
 
 def tic_tac_toe():
     tic_ui(demo)
